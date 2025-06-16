@@ -1,0 +1,29 @@
+# 数据文件
+*.h5
+*.npy
+*.npz
+*.pkl
+*.pt
+*.pth
+*.ckpt
+
+# 日志文件
+*.log
+logs/
+
+# 缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE文件
+.vscode/
+.idea/
+
+# 输出目录
+outputs_sted/
+pretrain/
+samples/
+baseline_estimator_resnet/
+baseline_estimator_vgg/
+preprocess/faze_preprocess/

@@ -1,0 +1,30 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# 项目目标
+本项目旨在实现高质量、高精度的Gaze Redirection（凝视重定向），提升生成图像的质量和凝视方向的精准还原。
+
+# 当前挑战
+目前生成图片存在模糊、身份信息保持能力较差的问题。后续需重点改进模型的生成清晰度和身份保持能力。
+
+# 项目结构规则
+
+## [models](mdc:models)
+该目录包含所有核心模型架构的实现，包括编码器、解码器、判别器和头部姿态/凝视估计网络。
+- [encoder.py](mdc:models/encoder.py)：实现特征编码器。
+- [decoder.py](mdc:models/decoder.py)：实现特征解码器。
+- [discriminator.py](mdc:models/discriminator.py)：实现PatchGAN判别器。
+- [gazeheadnet.py](mdc:models/gazeheadnet.py)：VGG16为基础的头部/凝视估计网络。
+- [gazeheadResnet.py](mdc:models/gazeheadResnet.py)：ResNet50为基础的头部/凝视估计网络。
+- [st_ed.py](mdc:models/st_ed.py)：主ST-ED模型，集成编码器、解码器、判别器等。
+- [densenet.py](mdc:models/densenet.py)：DenseNet相关模块。
+
+## [config](mdc:config)
+该目录包含模型训练和评估的配置文件（JSON格式），用于指定数据路径、超参数、训练策略等。
+- [ST-ED.json](mdc:config/ST-ED.json)：标准训练配置。
+- [eval.json](mdc:config/eval.json)：评估阶段配置。
+- [semi-supervise.json](mdc:config/semi-supervise.json)：半监督训练配置。
+
+
